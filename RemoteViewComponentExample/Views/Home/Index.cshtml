@@ -1,0 +1,15 @@
+﻿@using RemoteViewComponentRcl.Areas.RVC.Views.Shared.Components
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@await Component.InvokeAsync(typeof(RemoteViewComponent), new { url = Url.Action("Index", "LocalControllerAction") })
+<br/>
+@await Component.InvokeAsync(typeof(RemoteViewComponent), new { url = "http://localhost:53137/api/remotecontentfromapi" })
+<br/>
+@await Component.InvokeAsync(typeof(RemoteViewComponent), new { url = "http://localhost:53154/remotecontentfromwebsite" })
