@@ -19,6 +19,7 @@ namespace RemoteViewComponentRcl.Areas.RVC.Views.Shared.Components
 
         public async Task<IViewComponentResult> InvokeAsync(string url)
         {
+            // TODO: Inject HttpClient into the class
             var httpClient = new HttpClient();
             HttpRequest httpRequest = _httpContextAccessor.HttpContext.Request;
 
